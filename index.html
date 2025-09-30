@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reinvent Uniforms Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      .marquee-content {
+        animation: marquee 40s linear infinite;
+      }
+      .marquee-content:hover {
+        animation-play-state: paused;
+      }
+      @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+      .marquee-gallery-content {
+        animation: marquee-gallery 80s linear infinite;
+      }
+      .marquee-gallery-content:hover {
+        animation-play-state: paused;
+      }
+      @keyframes marquee-gallery {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+      .scroll-down-animation {
+        animation: scroll-down 2.5s ease-in-out infinite;
+      }
+      @keyframes scroll-down {
+        0% {
+          transform: translateY(-10px);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(10px);
+          opacity: 0;
+        }
+      }
+      .process-line {
+        flex-grow: 1;
+        height: 2px;
+        background-image: linear-gradient(to right, #d4a05d 50%, transparent 50%);
+        background-size: 10px 2px;
+        background-repeat: repeat-x;
+      }
+      @keyframes ken-burns {
+        0% {
+          transform: scale(1.05) translate(0, 0);
+        }
+        100% {
+          transform: scale(1.15) translate(-2%, 1%);
+        }
+      }
+      .ken-burns-bg {
+        animation: ken-burns 30s ease-in-out infinite alternate;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-blue': '#1a2c41',
+              'brand-gold': '#d4a05d',
+            },
+          }
+        }
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
